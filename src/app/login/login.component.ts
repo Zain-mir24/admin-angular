@@ -10,7 +10,6 @@ export class LoginComponent {
 
   }
   myFunction() {
-    console.log("JEREREE")
-    this.router.navigate(["/Dashboard"])
+        this.router.navigate(["/Dashboard"])
   }
 }

@@ -1,1 +1,17 @@
-<p class="sidebar text-[28px]">sidebar works!</p>
+<div class="w-[17rem] h-[1049px] bg-[#FCFCFC] overflow-y-hidden">
+  <div className="flex flex-col gap-3  overflow-y-hidden">
+    <div *ngFor="let item of navItems">
+      <div [class]="getClass(item)" (click)="handleClick(item)">
+        <p
+          [ngClass]="{
+            'flex items-center justify-between w-full': true,
+            'text-white': item.active,
+            'text-black': !item.active
+          }"
+        >
+          {{ item.name }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

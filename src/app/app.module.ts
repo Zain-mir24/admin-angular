@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { ButtonComponent } from './atoms/button/button.component';
 import { InputTextComponent } from './atoms/input-text/input-text.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TableComponent } from './components/table/table.component';
+import { AdminCardsComponent } from './components/admin-cards/admin-cards.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     ButtonComponent,
     InputTextComponent,
-    DashboardComponent
+    DashboardComponent,
+    TableComponent,
+    AdminCardsComponent
   ],
   imports: [
     BrowserModule,
