@@ -1,1 +1,16 @@
-<p class="main" (click)="myClick()">header works!</p>
+<div
+  [ngClass]="{
+    'overflow-hidden h-16 mt-2 mb-2 flex items-center justify-between  px-2 pr-8 relative': true,
+    'justify-between': title !== undefined && title !== null && title !== '',
+    'justify-end': !title || title === ''
+  }"
+>
+  <div *ngIf="title !== ''">
+    <p class="{text-[23px] font-bold text-[#212121] }">
+      {{ title }}
+    </p>
+
+    <p *ngIf="semiTitle !== ''" class="text-[#A4A4A4]">{{ semiTitle }}</p>
+  </div>
+  <div class="flex gap-4 items-center relative"></div>
+</div>
