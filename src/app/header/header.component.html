@@ -5,12 +5,22 @@
     'justify-end': !title || title === ''
   }"
 >
-  <div *ngIf="title !== ''">
-    <p class="{text-[23px] font-bold text-[#212121] }">
-      {{ title }}
-    </p>
-
-    <p *ngIf="semiTitle !== ''" class="text-[#A4A4A4]">{{ semiTitle }}</p>
+  <div>
+    <app-header-search
+      [searchPlaceholder]="'Search'"
+    ></app-header-search>
   </div>
-  <div class="flex gap-4 items-center relative"></div>
+
+  <div *ngIf="title !== ''" class="flex gap-4 items-center relative">
+    <div>
+      <img src='assets/Images/Admin.svg' />
+    </div>
+    <div>
+      <p class="{text-[23px] font-bold text-[#212121] }">
+        {{ title }}
+      </p>
+
+      <p *ngIf="semiTitle !== ''" class="text-[#A4A4A4]">{{ semiTitle }}</p>
+    </div>
+  </div>
 </div>
