@@ -9,5 +9,26 @@
     <app-admin-cards></app-admin-cards>
     <app-admin-cards></app-admin-cards>
   </div>
-  <p>dashboard works!</p>
+  <div class="flex w-100 justify-between gap-4 mt-4">
+    <div class="w-[50%]">
+      <app-table [tableHeader]="'Users'"></app-table>
+    </div>
+    <div class="w-[50%]">
+      <div class="flex justify-between px-2">
+        <p class="font-semibold pt-3 pl-3 overflow-hidden">Revenue</p>
+        <app-dropdown></app-dropdown>
+      </div>
+      <apx-chart
+        [grid]="chartOptions.grid"
+        [fill]="chartOptions.fill"
+        [markers]="chartOptions.markers"
+        [stroke]="chartOptions.stroke"
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis"
+        [title]="chartOptions.title"
+      ></apx-chart>
+    </div>
+  </div>
 </div>
