@@ -1,0 +1,24 @@
+.p-dropdown {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: #f6f6f6;
+  width: 180px;
+  height: 72px;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  align-items: center;
+  font-weight: 500;
+  font-family: "Manrope";
+  color: #212121;
+  font-size: 16px;
+}
+.p-dropdown-label.p-placeholder {
+  display: flex;
+  align-items: center;
+}
+.custom-dropdown:focus {
+  outline: none !important;
+  border: 1px solid red !important;
+  box-shadow: none !important;
+}

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input ,ViewEncapsulation} from '@angular/core';
 interface City {
   name: string;
   code: string;
@@ -7,6 +7,7 @@ interface City {
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css'],
+  encapsulation: ViewEncapsulation.None, // Try changing this to None
 })
 export class DropdownComponent {
   @Input() mainClass: string = '';
