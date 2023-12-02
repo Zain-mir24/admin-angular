@@ -3,9 +3,7 @@ interface Column {
   field: string;
   header: string;
 }
-interface Data {
-
-}
+interface Data {}
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -14,41 +12,24 @@ interface Data {
 export class TableComponent {
   cols!: Column[];
   data: any;
-  @Input() tableHeader:string='';
+  @Input() tableHeader: string = '';
+  @Input() ColumnHeader: any = [];
   ngOnInit() {
-    this.data = [
-      {
-        id: '1000',
-        name: 'Bamboo Watch',
-        email: 'admin@gmail.com',
-        quantity: 'Product Description',
-    
-      },
-      {
-        id: '1000',
-        name: 'Bamboo Watch',
-        email: 'admin@gmail.com',
-        quantity: 'Product Description',
-    
-      }, {
-        id: '1000',
-        name: 'Bamboo Watch',
-        email: 'admin@gmail.com',
-        quantity: 'Product Description',
-    
-      }, {
-        id: '1000',
-        name: 'Bamboo Watch',
-        email: 'admin@gmail.com',
-        quantity: 'Product Description',
-    
-      },
-    ];
+    this.data = this.ColumnHeader;
+    // this.ColumnHeader.map((item: any, index: number) => {
+    //   Object.keys(item).map((item2)=>{
+    //     console.log(item2)
+    //     this.cols.push({
+    //       field:item2,
+    //       header:item2
+    //     })
+    //   })
+    // });
     this.cols = [
       { field: 'id', header: 'id' },
       { field: 'name', header: 'Name' },
       { field: 'email', header: 'email' },
-      { field: 'quantity', header: 'Quantity' },
+      { field: 'phone', header: 'Phone' },
     ];
   }
 }

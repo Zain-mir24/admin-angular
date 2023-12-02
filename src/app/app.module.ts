@@ -18,6 +18,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     DashboardComponent,
     AdminCardsComponent,
     HeaderSearchComponent,
-    DropdownComponent
+    DropdownComponent,
+    UserComponent
 
   ],
   imports: [

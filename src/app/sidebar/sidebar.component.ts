@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 interface navTypes {
   id: number;
   name: string;
@@ -12,7 +14,7 @@ interface navTypes {
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
-  constructor() {}
+  constructor(private router:Router) {}
   navItems: Array<navTypes> = [
     {
       id: 1,
@@ -28,19 +30,19 @@ export class SidebarComponent {
       active: false,
       url: '/Users',
     },
-    {
-      id: 3,
-      name: 'Product',
-      icon: 'assets/Images/user.svg',
-      active: false,
-      url: '/Users',
-    },
+    // {
+    //   id: 3,
+    //   name: 'Product',
+    //   icon: 'assets/Images/user.svg',
+    //   active: false,
+    //   url: '/Users',
+    // },
     {
       id: 4,
       name: 'Orders',
       icon: 'assets/Images/user.svg',
       active: false,
-      url: '/Users',
+      url: '/Orders',
     },
   ];
 
@@ -59,5 +61,6 @@ export class SidebarComponent {
       }
      item2.active=false;
     })
+    this.router.navigate([`${item.url}`])
   }
 }

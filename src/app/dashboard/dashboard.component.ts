@@ -1,11 +1,11 @@
-import { Component,ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import {
   ChartComponent,
   ApexAxisChartSeries,
   ApexChart,
   ApexXAxis,
-  ApexTitleSubtitle
-} from "ng-apexcharts";
+  ApexTitleSubtitle,
+} from 'ng-apexcharts';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -20,10 +20,55 @@ export type ChartOptions = {
   encapsulation: ViewEncapsulation.None, // Try changing this to None
 })
 export class DashboardComponent {
-
-  constructor(){
-
-  }
+  constructor() {}
+  productTableHeader = [
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      quantity: 'Product Description',
+    },
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      quantity: 'Product Description',
+    },
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      quantity: 'Product Description',
+    },
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      quantity: 'Product Description',
+    },
+  ];
+  userTableHeader = [
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      email: 'admin@gmail.com',
+      phone: 'Product Description',
+    },
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      email: 'admin@gmail.com',
+      phone: 'Product Description',
+    },
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      email: 'admin@gmail.com',
+      phone: 'Product Description',
+    },
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      email: 'admin@gmail.com',
+      phone: 'Product Description',
+    },
+  ];
   monthOrder: any = {
     Jan: 0,
     Feb: 1,
@@ -38,14 +83,15 @@ export class DashboardComponent {
     Nov: 10,
     Dec: 11,
   };
- chartOptions: any = {
-    series : [
+  chartOptions: any = {
+    series: [
       {
         name: 'Series 1',
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
       },
     ],
     chart: {
+      height: 300,
       toolbar: {
         show: false,
       },
@@ -78,7 +124,7 @@ export class DashboardComponent {
         shadeIntensity: 0.2,
         opacityFrom: 0.4,
         opacityTo: 0.1,
-        stops: [0, 90, 100],
+        stops: [0, 120, 100],
       },
       colors: ['#000000'],
     },

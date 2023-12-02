@@ -11,14 +11,17 @@
   </div>
   <div class="flex w-100 justify-between gap-4 mt-4">
     <div class="w-[50%]">
-      <app-table [tableHeader]="'Users'"></app-table>
+      <app-table [tableHeader]="'Users'"[ColumnHeader]="userTableHeader"></app-table>
     </div>
-    <div class="w-[50%]">
+    <div class="w-[50%] ">
       <div class="flex justify-between px-2">
         <p class="font-semibold pt-3 pl-3 overflow-hidden">Revenue</p>
         <app-dropdown></app-dropdown>
       </div>
-      <apx-chart
+      <div 
+      class="!h-auto  overflow-y-auto"
+      >
+        <apx-chart
         [grid]="chartOptions.grid"
         [fill]="chartOptions.fill"
         [markers]="chartOptions.markers"
@@ -29,15 +32,17 @@
         [yaxis]="chartOptions.yaxis"
         [title]="chartOptions.title"
       ></apx-chart>
+      </div>
+
     </div>
   </div>
 
   <div class="flex w-100 justify-between gap-4 mt-4 mb-9">
     <div class="w-[50%]">
-      <app-table [tableHeader]="'Products'"></app-table>
+      <app-table [tableHeader]="'Products'" [ColumnHeader]="productTableHeader"></app-table>
     </div>
     <div class="w-[50%]">
-      <app-table [tableHeader]="'Users'"></app-table>
+      <app-table [tableHeader]="'Users'" [ColumnHeader]="userTableHeader"></app-table>
     </div>
   </div>
 </div>
