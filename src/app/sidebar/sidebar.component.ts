@@ -30,13 +30,13 @@ export class SidebarComponent {
       active: false,
       url: '/Users',
     },
-    // {
-    //   id: 3,
-    //   name: 'Product',
-    //   icon: 'assets/Images/user.svg',
-    //   active: false,
-    //   url: '/Users',
-    // },
+    {
+      id: 3,
+      name: 'Product',
+      icon: 'assets/Images/user.svg',
+      active: false,
+      url: '/Products',
+    },
     {
       id: 4,
       name: 'Orders',

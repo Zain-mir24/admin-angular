@@ -12,24 +12,21 @@ interface Data {}
 export class TableComponent {
   cols!: Column[];
   data: any;
+  newData:any=[];
   @Input() tableHeader: string = '';
   @Input() ColumnHeader: any = [];
   ngOnInit() {
     this.data = this.ColumnHeader;
-    // this.ColumnHeader.map((item: any, index: number) => {
-    //   Object.keys(item).map((item2)=>{
-    //     console.log(item2)
-    //     this.cols.push({
-    //       field:item2,
-    //       header:item2
-    //     })
-    //   })
-    // });
-    this.cols = [
-      { field: 'id', header: 'id' },
-      { field: 'name', header: 'Name' },
-      { field: 'email', header: 'email' },
-      { field: 'phone', header: 'Phone' },
-    ];
+    this.ColumnHeader.slice(0,1).map((item: any, index: number) => {
+      Object.keys(item).map((item2)=>{
+        this.newData.push({
+          field:item2,
+          header:item2
+        })
+      
+      })
+    });
+    this.cols=this.newData
+   
   }
 }

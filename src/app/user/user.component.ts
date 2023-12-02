@@ -12,7 +12,32 @@ export class UserComponent {
     email: string;
     phone: string;
   }> = [];
-
+  userTableHeader = [
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      email: 'admin@gmail.com',
+      phone: 'Product Description',
+    },
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      email: 'admin@gmail.com',
+      phone: 'Product Description',
+    },
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      email: 'admin@gmail.com',
+      phone: 'Product Description',
+    },
+    {
+      id: '1000',
+      name: 'Bamboo Watch',
+      email: 'admin@gmail.com',
+      phone: 'Product Description',
+    },
+  ];
   ngOnInit() {
     this.columnHeaders = [
       {

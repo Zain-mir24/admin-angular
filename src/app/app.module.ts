@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UserComponent } from './user/user.component';
     AdminCardsComponent,
     HeaderSearchComponent,
     DropdownComponent,
-    UserComponent
+    UserComponent,
+    ProductComponent
 
   ],
   imports: [
