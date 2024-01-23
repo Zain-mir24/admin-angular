@@ -10,6 +10,9 @@ export class ButtonComponent {
   @Input() buttonText:string='';
   @Output() buttonClick: EventEmitter<void> = new EventEmitter<void>();
 
+  ngOnInit(){
+    console.log(this.buttonText)
+  }
   handleButtonClick(): void {
     this.buttonClick.emit();
   }

@@ -1,0 +1,68 @@
+<div
+  class="text-center absolute top-[20%] left-[40%] h-[100vh] flex flex-col items-center"
+>
+  <p class="text-[36px] font-[700] mt-[10px] text-black">Sign up to zelectra</p>
+  <div
+    className="w-[116px] h-[116px] rounded-[50%] bg-lightgray flex justify-center align-middle items-center"
+  >
+    <img
+      src="assets/Images/Hand.svg"
+      alt="hand-img"
+      class="w-[53px] h-[53px]"
+    />
+  </div>
+  <form [formGroup]="signUpForm" (ngSubmit)="submitForm()">
+    <app-input-text
+      [formGroup]="signUpForm"
+      [formControlValue]="'Username'"
+      [inputPlaceholder]="'Username'"
+    ></app-input-text>
+    <div
+      *ngIf="signUpForm.get('Username')?.hasError('required')"
+      className="text-red"
+    >
+      <p>Username is required</p>
+    </div>
+    <app-input-text
+      [formGroup]="signUpForm"
+      [formControlValue]="'Email'"
+      [inputPlaceholder]="'Email'"
+    ></app-input-text>
+    <div
+      *ngIf="signUpForm.get('Email')?.hasError('required')"
+      className="text-red"
+    >
+      <p>Email is required</p>
+    </div>
+    <app-input-text
+      [formGroup]="signUpForm"
+      [formControlValue]="'phoneNo'"
+      [inputPlaceholder]="'phone_no'"
+    ></app-input-text>
+    <div
+      *ngIf="signUpForm.get('phoneNo')?.hasError('required')"
+      className="text-red"
+    >
+      <p>Phone is required</p>
+    </div>
+    <app-input-text
+      [formGroup]="signUpForm"
+      [formControlValue]="'password'"
+      [inputPlaceholder]="'Password'"
+    ></app-input-text>
+    <div
+      *ngIf="signUpForm.get('password')?.hasError('required')"
+      className="text-red"
+    >
+      <p>password is required</p>
+    </div>
+    <app-button
+      type="submit"
+      [buttonText]="'Signup'"
+      [mainClasses]="
+        'w-[397px] mt-3 h-[72px] gap-3 overflow-hidden flex items-center justify-center bg-black text-[white] text-[16px] font-[500] rounded-[17px] cursor-pointer'
+      "
+    >
+    </app-button>
+  </form>
+</div>

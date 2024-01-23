@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApiInterceptor } from 'src/common/api.interceptor';
+import { importProvidersFrom } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -13,14 +18,16 @@ import { CustomTableModule } from './components/table/table.module';
 import { AdminCardsComponent } from './components/admin-cards/admin-cards.component';
 import { HeaderSearchComponent } from './atoms/header-search/header-search.component';
 import { DropdownComponent } from './atoms/dropdown/dropdown.component';
-import { NgApexchartsModule } from "ng-apexcharts";
+import { NgApexchartsModule } from 'ng-apexcharts';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
 import { ProductComponent } from './product/product.component';
-
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignupVerifyComponent } from './signup-verify/signup-verify.component';
+import { ApiInterceptorProviderService } from './api-interceptor-provider.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,20 +42,25 @@ import { ProductComponent } from './product/product.component';
     HeaderSearchComponent,
     DropdownComponent,
     UserComponent,
-    ProductComponent
-
+    ProductComponent,
+    SignUpComponent,
+    SignupVerifyComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgApexchartsModule,
     AppRoutingModule,
     CustomTableModule,
     DropdownModule,
     FormsModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    ...ApiInterceptorProviderService.prototype.provideApiInterceptor(),
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,15 +1,23 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private router:Router){
+  loginForm: FormGroup = this.fb.group({
+    Email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+  });
+  constructor(private fb: FormBuilder, private router: Router) {}
 
-  }
-  myFunction() {
-        this.router.navigate(["/Dashboard"])
+  ngOnInit() {}
+
+  submitForm() {
+    console.log(this.loginForm.get('Email')?.value);
+    // this.router.navigate(["/Dashboard"])
   }
 }

@@ -4,17 +4,36 @@
   <p class="text-[36px] font-[700] mt-[10px] text-black">
     Hello welcome to zelectra
   </p>
-  <div className="w-[116px] h-[116px] rounded-[50%] bg-lightgray flex justify-center align-middle items-center">
-    <img src="assets/Images/Hand.svg" alt="hand-img" class="w-[53px] h-[53px]" />
+  <div
+    className="w-[116px] h-[116px] rounded-[50%] bg-lightgray flex justify-center align-middle items-center"
+  >
+    <img
+      src="assets/Images/Hand.svg"
+      alt="hand-img"
+      class="w-[53px] h-[53px]"
+    />
   </div>
-  <app-input-text [inputPlaceholder]="'Enter email'"></app-input-text>
-  <app-input-text [inputPlaceholder]="'Password'"></app-input-text>
-  <div class="flex justify-end text-right mt-[10px] w-[400px]">
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <app-input-text
+      [formGroup]="loginForm"
+      [formControlValue]="'Email'"
+      [inputPlaceholder]="'Enter email'"
+    ></app-input-text>
+    <app-input-text
+      [formGroup]="loginForm"
+      [formControlValue]="'password'"
+      [inputPlaceholder]="'Password'"
+    ></app-input-text>
+  </form>
+  <div class="flex justify-between text-right mt-[10px] w-[400px]">
+    <a class="text-[grey] mt-2" [routerLink]="['/signup']"
+      >Don't have an account? Signup!</a
+    >
+
     <p class="text-[grey] mt-2">Forgot Password?</p>
   </div>
-
   <app-button
-    (buttonClick)="myFunction()"
+    (buttonClick)="submitForm()"
     [buttonText]="'Login'"
     [mainClasses]="
       'w-[397px] mt-3 h-[72px] gap-3 overflow-hidden flex items-center justify-center bg-black text-[white] text-[16px] font-[500] rounded-[17px] cursor-pointer'

@@ -5,8 +5,10 @@ import { OrdersComponent } from './orders/orders.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { ProductComponent } from './product/product.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 const routes: Routes = [
   { path: '', component: LoginComponent }, // Existing route for the home component
+  { path: 'signup', component: SignUpComponent },
   { path: 'Dashboard', component: DashboardComponent }, // New route for your component
   { path: 'Orders', component: OrdersComponent }, // New route for your component
   { path: 'Users', component: UserComponent }, // New route for your component
@@ -15,6 +17,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

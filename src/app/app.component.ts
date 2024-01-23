@@ -31,7 +31,7 @@ export class AppComponent {
   private shouldShowSidebar(url: string): boolean {
     // Implement your logic to determine if the sidebar should be displayed
     // For example, you can check the URL or any other conditions
-    return url !== '/login' && url!=='/';
+    return url !== '/login' && url!=='/' && url!=='/signup';
   }
 
 }
