@@ -9,10 +9,7 @@ export class SignupVerifyService {
   signupVerifyCall(Token: string):any {
     try {
       // Create headers with Authorization header
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${Token}`,
-      });
+      const headers = { Authorization: 'true' };
       // Include headers in the HTTP request
       const options = { headers: headers };
       const SignupVerify = '/auth/sign-up/confirm';
