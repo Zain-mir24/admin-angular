@@ -1,1 +1,9 @@
-<p>product works!</p>
+
+<div class="header">
+    <!-- Header content goes here -->
+    <app-header [title]="'Huzaifa'" [semiTitle]="'Admin'"></app-header>
+  </div>
+  <div *ngIf="userTableHeader.length">
+    <app-table [tableHeader]="'Products'" [ColumnHeader]="userTableHeader" [records]="total" (pageEvent)="recievePageData($event)" ></app-table>
+  </div>
+  
