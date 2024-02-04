@@ -17,11 +17,11 @@ export class SignupVerifyComponent {
 
   ngOnInit() {
     this.route.params.subscribe((params: any) => {
-      localStorage.setItem("authToken",params.AID)
+      localStorage.setItem("token",params.AID)
       // Access route parameters here
-      this.signupVerifyService.signupVerifyCall(params['AID']).subscribe(
+      this.signupVerifyService.signupVerifyCall().subscribe(
         (response: { message: string }) => {
-          this.router.navigate(['/']);
+          this.router.navigate(['']);
           // Handle successful signup response, e.g., navigate to another page
         },
         (error: any) => {

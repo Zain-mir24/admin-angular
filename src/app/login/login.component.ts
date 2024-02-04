@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { loginService } from './services/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,12 +12,25 @@ export class LoginComponent {
     Email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
   });
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private _login: loginService
+  ) {}
 
   ngOnInit() {}
 
   submitForm() {
-    console.log(this.loginForm.get('Email')?.value);
-    // this.router.navigate(["/Dashboard"])
+    try {
+      let email = this.loginForm.get('Email')?.value;
+      let password = this.loginForm.get('password')?.value;
+      this._login.login(email, password).subscribe(
+        (response: any) => {
+          console.log(response)
+          this.router.navigate(['/Dashboard']);
+        },
+        (error: any) => {}
+      );
+    } catch (e) {}
   }
 }

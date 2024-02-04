@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class SignupVerifyService {
   constructor(private http: HttpClient) {}
-  signupVerifyCall(Token: string):any {
+  signupVerifyCall():any {
     try {
       // Create headers with Authorization header
       const headers = { Authorization: 'true' };

@@ -33,7 +33,7 @@ export class AppComponent {
     // For example, you can check the URL or any other conditions
     console.log(url)
     const isSignupVerifyRoute: boolean = url.includes('/signup-verify/')
-    return url !== '/login' && url!=='/' && url!=='/signup' && !isSignupVerifyRoute;
+    return url !== '/login' && url!=='/' && url!=='/signup' &&!isSignupVerifyRoute;
   }
 
 }
