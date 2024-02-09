@@ -19,17 +19,19 @@ export class TableComponent {
   data: any;
   newData: any = [];
   first: number = 1;
-
   rows: number = 5;
+
   @Input() records = 0;
+  @Input() tableHeader: string = '';
+  @Input() ColumnHeader: any = [];
   @Output() pageEvent = new EventEmitter<string>();
+
   onPageChange(event: any) {
     this.first = event.page;
     this.rows = event.rows;
     this.pageEvent.emit(event);
   }
-  @Input() tableHeader: string = '';
-  @Input() ColumnHeader: any = [];
+
 
   ngOnChanges(changes: any) {
     this.data=changes.ColumnHeader.currentValue
@@ -37,7 +39,7 @@ export class TableComponent {
 
   ngOnInit() {
     this.data = this.ColumnHeader;
-    console.log(this.ColumnHeader);
+    
     this.ColumnHeader.slice(0, 1).map((item: any, index: number) => {
       Object.keys(item).map((item2) => {
         this.newData.push({

@@ -12,14 +12,14 @@ export class ProductComponent {
 
   constructor(private _product: ProductService) {}
 
-  columnHeaders: Array<{
+
+  userTableHeader:Array<{
     id: number;
     title: string;
     description: string;
     categoryId: number;
     price: number;
-  }> = [];
-  userTableHeader = [];
+  }>= [];
   ngOnInit() {
     this.fetchProducts();
   }

@@ -2,6 +2,6 @@
   <!-- Header content goes here -->
   <app-header [title]="'Huzaifa'" [semiTitle]="'Admin'"></app-header>
 </div>
-<div>
-  <app-table [tableHeader]="'Users'" [ColumnHeader]="userTableHeader"></app-table>
+<div *ngIf="userTableHeader.length">
+  <app-table [tableHeader]="'Users'" [ColumnHeader]="userTableHeader" [records]="total" (pageEvent)="recievePageData($event)"></app-table>
 </div>

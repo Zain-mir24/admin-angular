@@ -3,6 +3,7 @@
     [columns]="cols"
     [value]="data"
     [tableStyle]="{ 'min-width': '50rem' }"
+    
   >
     <ng-template *ngIf="tableHeader" pTemplate="caption">
       {{ tableHeader }}
@@ -23,6 +24,6 @@
     </ng-template>
   </p-table>
   <div *ngIf="records!==0" class="card flex justify-content-center">
-    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="records"></p-paginator>
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="records" [showFirstLastIcon]="false"></p-paginator>
 </div>
 </div>
