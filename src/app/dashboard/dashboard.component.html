@@ -10,8 +10,8 @@
     <app-admin-cards></app-admin-cards>
   </div>
   <div class="flex w-100 justify-between gap-4 mt-4">
-    <div class="w-[50%]">
-      <app-table [tableHeader]="'Users'"[ColumnHeader]="userTableHeader"></app-table>
+    <div class="w-[50%]" *ngIf="userTableHeader.length">
+      <app-table [tableHeader]="'Users'"[ColumnHeader]="userTableHeader"[records]="total" (pageEvent)="recievePageData($event)"></app-table>
     </div>
     <div class="w-[50%] ">
       <div class="flex justify-between px-2">
@@ -38,11 +38,9 @@
   </div>
 
   <div class="flex w-100 justify-between gap-4 mt-4 mb-9">
-    <div class="w-[50%]">
-      <app-table [tableHeader]="'Products'" [ColumnHeader]="productTableHeader"></app-table>
+    <div class="w-[100%]"  *ngIf="productTableData.length">
+      <app-table [tableHeader]="'Products'" [ColumnHeader]="productTableData" [records]="prodTotal" (pageEvent)="recieveProdPageData($event)"></app-table>
     </div>
-    <div class="w-[50%]">
-      <app-table [tableHeader]="'Users'" [ColumnHeader]="userTableHeader"></app-table>
-    </div>
+   
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserService } from './services/user.service';
+import { UserService } from './services/user.service'
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -10,6 +10,8 @@ export class UserComponent {
   pageSize: number = 4;
   total: number = 0;
 
+  
+ 
   constructor(private _user: UserService) {}
 
   userTableHeader: Array<{
@@ -18,11 +20,13 @@ export class UserComponent {
     email: string;
     phone_no: string;
   }> = [];
-  ngOnInit() {
-    this.fetchProducts();
-  }
 
-  fetchProducts() {
+
+  ngOnInit() {
+    this.fetchUsers();
+  }
+  
+  fetchUsers() {
     this._user.fetchUsers(this.page, this.pageSize).subscribe(
       (res: any) => {
         this.total = res.meta.itemCount;
@@ -35,7 +39,7 @@ export class UserComponent {
             phone_no,
           };
         });
-        console.log(this.userTableHeader);
+
       },
       (err: any) => {
         console.log(err);
@@ -45,6 +49,6 @@ export class UserComponent {
 
   recievePageData(data: any) {
     this.page = data.page + 1;
-    this.fetchProducts();
+    this.fetchUsers();
   }
 }
