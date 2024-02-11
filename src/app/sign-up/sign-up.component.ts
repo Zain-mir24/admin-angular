@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SignupService } from './Services/Signup.service';
 import { FormValidationService } from 'src/common/FormValidator.service';
+
+import { DialogModule } from 'primeng/dialog';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -20,9 +22,14 @@ export class SignUpComponent {
     private fb: FormBuilder,
     private router: Router,
     private signupService: SignupService,
-    private formValidator:FormValidationService
-  ) {}
+    private formValidator:FormValidationService,
 
+  ) {}
+  visible: boolean = false;
+  dialogMessage:string='';
+  showDialog() {
+      this.visible = true;
+  }
   ngOnInit() {}
 
   submitForm() {
@@ -43,11 +50,20 @@ export class SignUpComponent {
     }
     this.signupService.signUpCall(userData).subscribe(
       (response: any) => {
-        console.log('Signup successful:', response);
         // Handle successful signup response, e.g., navigate to another page
+      if(response.Message==="Check email to verify your signup"){
+        this.dialogMessage="Open email and navigate to given link"
+        this.showDialog()
+        setTimeout(()=>{
+        this.router.navigate(['/']);
+        },3000)
+      }
+        
       },
       (error: any) => {
         console.error('Signup error:', error.error);
+        this.dialogMessage="Error signing up"
+        this.showDialog()
         // Handle signup error, e.g., display an error message
       }
     );

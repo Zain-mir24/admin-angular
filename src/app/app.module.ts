@@ -21,6 +21,7 @@ import { DropdownComponent } from './atoms/dropdown/dropdown.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
@@ -57,6 +58,7 @@ import { ApiInterceptorProviderService } from './api-interceptor-provider.servic
     BrowserAnimationsModule,
     NoopAnimationsModule,
     ReactiveFormsModule,
+    DialogModule
   ],
   providers: [
     ...ApiInterceptorProviderService.prototype.provideApiInterceptor(),
