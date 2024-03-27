@@ -44,6 +44,20 @@ export class SidebarComponent {
       active: false,
       url: '/Orders',
     },
+    {
+      id: 5,
+      name: 'Category',
+      icon: 'assets/Images/user.svg',
+      active: false,
+      url: '/Orders',
+    },
+    {
+      id: 6,
+      name: 'Chat',
+      icon: 'assets/Images/user.svg',
+      active: false,
+      url: '/Chat',
+    },
   ];
 
   getClass(item: any): string {

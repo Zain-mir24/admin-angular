@@ -7,6 +7,7 @@ import { UserComponent } from './user/user.component';
 import { ProductComponent } from './product/product.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignupVerifyComponent } from './signup-verify/signup-verify.component';
+import {ChatMainComponent} from "./chat/chat-main/chat-main.component"
 const routes: Routes = [
   { path: '', component: LoginComponent }, // Existing route for the home component
   { path: 'signup', component: SignUpComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'Orders', component: OrdersComponent }, // New route for your component
   { path: 'Users', component: UserComponent }, // New route for your component
   { path: 'Products', component: ProductComponent }, // New route for your component
+  { path: 'Chat', component: ChatMainComponent }, // New route for your component
 ];
 
 @NgModule({
