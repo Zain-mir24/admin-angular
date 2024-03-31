@@ -27,9 +27,15 @@ export class LoginComponent {
       this._login.login(email, password).subscribe(
         (response: any) => {
           console.log(response)
+          let data={id:response.User.id,email:response.User.email,username:response.User.username}
+          localStorage.setItem("login_info",JSON.stringify(data))
+          localStorage.setItem("token",response.User.accessToken)
           this.router.navigate(['/Dashboard']);
         },
-        (error: any) => {}
+        (error: any) => {
+          localStorage.clear()
+          console.log(error)
+        }
       );
     } catch (e) {}
   }

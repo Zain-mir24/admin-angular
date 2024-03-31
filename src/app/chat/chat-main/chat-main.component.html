@@ -1,28 +1,30 @@
 <div class="flex flex-col">
-    <div class="flex flex-row justify-between border w-full mt-5 h-[500px] bg-gray-200">
-        <div class="flex flex-col w-[50%] p-4 bg-white rounded-lg shadow-lg">
-            <!-- Other user's messages -->
-            <div class="flex flex-col gap-2">
-                <div class="bg-blue text-white p-2 rounded-lg max-w-xs">
-                    <p>Zain mir</p>
+    <div class="flex flex-row justify-between border w-full mt-5 h-[500px] bg-gray-200 overflow-y-auto ">
+
+        <div class="flex flex-col  gap-3 w-[100%] p-4 bg-white ">
+            <div class="flex flex-col  gap-3 w-[100%] p-4 bg-white " *ngFor="let message of all_messages">
+                <!-- Other user's messages -->
+                <div *ngIf="message.senderId !== currentUserID"  class="flex flex-col gap-2 rounded-lg shadow-lg">
+                    <div class="bg-blue text-white p-2 rounded-lg max-w-xs">
+                        <p>{{ message.content }}</p>
+                    </div>
+
                 </div>
+              
+                <div *ngIf="message.senderId === currentUserID" class="flex flex-col gap-2 rounded-lg shadow-lg">
+                    <div class="bg-custom-yellow p-2 rounded-lg max-w-xs self-end">
+                        <p>{{ message.content }}</p>
+                    </div>
 
-            </div>
-        </div>
-
-        <div class="flex flex-col w-[50%] p-4 bg-white rounded-lg shadow-lg">
-            <!-- Your messages -->
-            <div class="flex flex-col gap-2">
-                <div class="bg-custom-yellow p-2 rounded-lg max-w-xs self-end">
-                    <p>Your message 1</p>
                 </div>
-
             </div>
+
 
 
         </div>
 
     </div>
+
     <!-- Message input -->
     <div class="flex flex-col gap-3 mt-4">
         <input class="border p-2" type="text" [(ngModel)]="message" placeholder="Type your message...">
