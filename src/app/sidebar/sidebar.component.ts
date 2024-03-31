@@ -58,6 +58,13 @@ export class SidebarComponent {
       active: false,
       url: '/Chat',
     },
+    {
+      id: 7,
+      name: 'logout',
+      icon: 'assets/Images/user.svg',
+      active: false,
+      url: '/',
+    },
   ];
 
   getClass(item: any): string {

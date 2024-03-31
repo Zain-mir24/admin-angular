@@ -1,1 +1,5 @@
-<p>chat-table works!</p>
+<div>
+    <div >
+        <app-table [tableHeader]="'Products'" [ColumnHeader]="userTableHeader" [records]="total" (pageEvent)="recievePageData($event)" ></app-table>
+      </div>
+</div>
